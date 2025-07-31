@@ -22,7 +22,7 @@ Architecture: Everything runs in a single Python process. On startup, model.pkl 
 # Challenges & Solutions
 
 Styling Streamlit Containers <br>
-­Issue: Streamlit doesn’t nest widgets inside custom HTML "<div>" blocks, so manual wrappers didn’t “cover” content. <br>
+­Issue: Streamlit doesn’t nest widgets inside custom HTML div blocks, so manual wrappers didn’t “cover” content. <br>
 Solution: Switched to targeting Streamlit’s native .block-container class in CSS, applying a transparent black background to encapsulate all widgets automatically. <br>
 
 Hiding Native UI Elements <br>

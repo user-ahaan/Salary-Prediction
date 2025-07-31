@@ -7,6 +7,18 @@ The Salary Prediction App is a web-based tool that leverages ensemble machine le
 
 <br>
 
+# Features
+
+Interactive sliders and dropdowns for user input
+
+Choice of three machine learning models for prediction
+
+Real-time scaling and encoding of inputs
+
+Clean, responsive UI with custom background and overlay
+
+<br>
+
 # Implementation Details
 
 Data & Models: Trained on a cleaned Kaggle salary dataset using scikit-learn’s RandomForestRegressor and GradientBoostingRegressor. A VotingRegressor combines both. All models use 200 trees/estimators.
@@ -21,22 +33,26 @@ Architecture: Everything runs in a single Python process. On startup, model.pkl 
 
 # Challenges & Solutions
 
-Styling Streamlit Containers <br>
+Styling Streamlit Containers: <br>
 ­Issue: Streamlit doesn’t nest widgets inside custom HTML div blocks, so manual wrappers didn’t “cover” content. <br>
 Solution: Switched to targeting Streamlit’s native .block-container class in CSS, applying a transparent black background to encapsulate all widgets automatically. <br>
 
-Hiding Native UI Elements <br>
+Hiding Native UI Elements: <br>
 ­Issue: The hamburger menu and footer changed identifiers in newer Streamlit versions (IDs like #MainMenu no longer existed). <br>
 Solution: Used resilient selectors—[data-testid="stHeader"] and footer with display: none—to reliably remove those elements across versions. <br>
 
-Local Background Images <br>
+Local Background Images: <br>
 ­Issue: Local file paths for background images did not render in deployed environments. <br>
 Solution: Switched to a hosted Unsplash URL for the background image, ensuring consistent rendering without path issues. <br>
 
-Textual vs. Encoded Inputs <br>
+Textual vs. Encoded Inputs: <br>
 ­Issue: Users naturally enter job titles and education as text, but the model expects integer-encoded values. <br>
 Solution: Saved each LabelEncoder to model.pkl. At prediction time, raw text inputs are transformed with the same encoders, preserving consistency and preventing mismatches. <br>
 
-Responsive Layout <br>
-­Issue: Centering the predict button and ensuring the content fits without scrolling proved tricky. <br>
-Solution: Employed CSS flexbox (.stButton { display:flex; justify-content:center; }) and, optionally, disabled scrolling via overflow: hidden on html, body, .stAppViewContainer when the content height remained within viewport bounds.
+<br>
+
+# Requirements
+
+Python Dependencies: streamlit, pandas, scikit-learn, matplotlib, seaborn, joblib.
+
+Execution : testing.py or app.py ( streamlit run app.py - in terminal)

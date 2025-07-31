@@ -1,10 +1,13 @@
 # Salary-Prediction
 
+<br>
 
-Project Description
+# Project Description
 The Salary Prediction App is a web-based tool that leverages ensemble machine learning to estimate a user’s expected salary based on key demographic and professional attributes: age, gender, education level, job title, and years of experience. Users choose among three regression models—Random Forest, Gradient Boosting, or a Voting Ensemble—to generate a prediction. A polished, responsive UI built with Streamlit overlays a full-screen background image, providing an intuitive form and visually striking result card.
 
-Implementation Details
+<br>
+
+# Implementation Details
 
 Data & Models: Trained on a cleaned Kaggle salary dataset using scikit-learn’s RandomForestRegressor and GradientBoostingRegressor. A VotingRegressor combines both. All models use 200 trees/estimators.
 
@@ -14,7 +17,9 @@ Web Application: The front end uses Streamlit for rapid development and deployme
 
 Architecture: Everything runs in a single Python process. On startup, model.pkl is loaded, and the app listens for interactions. On “Predict Salary,” a pandas DataFrame is constructed for the user input, preprocessed, and fed into the chosen model. Prediction is displayed in a styled result box.
 
-Challenges & Solutions
+<br>
+
+# Challenges & Solutions
 
 Styling Streamlit Containers
 ­Issue: Streamlit doesn’t nest widgets inside custom HTML <div> blocks, so manual wrappers didn’t “cover” content.

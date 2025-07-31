@@ -21,22 +21,22 @@ Architecture: Everything runs in a single Python process. On startup, model.pkl 
 
 # Challenges & Solutions
 
-Styling Streamlit Containers
-­Issue: Streamlit doesn’t nest widgets inside custom HTML <div> blocks, so manual wrappers didn’t “cover” content.
-Solution: Switched to targeting Streamlit’s native .block-container class in CSS, applying a transparent black background to encapsulate all widgets automatically.
+Styling Streamlit Containers <br>
+­Issue: Streamlit doesn’t nest widgets inside custom HTML <div> blocks, so manual wrappers didn’t “cover” content. <br>
+Solution: Switched to targeting Streamlit’s native .block-container class in CSS, applying a transparent black background to encapsulate all widgets automatically. <br>
 
-Hiding Native UI Elements
-­Issue: The hamburger menu and footer changed identifiers in newer Streamlit versions (IDs like #MainMenu no longer existed).
-Solution: Used resilient selectors—[data-testid="stHeader"] and footer with display: none—to reliably remove those elements across versions.
+Hiding Native UI Elements <br>
+­Issue: The hamburger menu and footer changed identifiers in newer Streamlit versions (IDs like #MainMenu no longer existed). <br>
+Solution: Used resilient selectors—[data-testid="stHeader"] and footer with display: none—to reliably remove those elements across versions. <br>
 
-Local Background Images
-­Issue: Local file paths for background images did not render in deployed environments.
-Solution: Switched to a hosted Unsplash URL for the background image, ensuring consistent rendering without path issues.
+Local Background Images <br>
+­Issue: Local file paths for background images did not render in deployed environments. <br>
+Solution: Switched to a hosted Unsplash URL for the background image, ensuring consistent rendering without path issues. <br>
 
-Textual vs. Encoded Inputs
-­Issue: Users naturally enter job titles and education as text, but the model expects integer-encoded values.
-Solution: Saved each LabelEncoder to model.pkl. At prediction time, raw text inputs are transformed with the same encoders, preserving consistency and preventing mismatches.
+Textual vs. Encoded Inputs <br>
+­Issue: Users naturally enter job titles and education as text, but the model expects integer-encoded values. <br>
+Solution: Saved each LabelEncoder to model.pkl. At prediction time, raw text inputs are transformed with the same encoders, preserving consistency and preventing mismatches. <br>
 
-Responsive Layout
-­Issue: Centering the predict button and ensuring the content fits without scrolling proved tricky.
+Responsive Layout <br>
+­Issue: Centering the predict button and ensuring the content fits without scrolling proved tricky. <br>
 Solution: Employed CSS flexbox (.stButton { display:flex; justify-content:center; }) and, optionally, disabled scrolling via overflow: hidden on html, body, .stAppViewContainer when the content height remained within viewport bounds.

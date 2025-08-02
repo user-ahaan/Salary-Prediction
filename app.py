@@ -140,3 +140,4 @@ if st.button("🔍 Predict Salary"):
         """,
         unsafe_allow_html=True
     )
+

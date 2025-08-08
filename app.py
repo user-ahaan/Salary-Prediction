@@ -7,18 +7,12 @@ st.set_page_config(page_title="Salary Prediction App", page_icon="💼", layout=
 st.markdown(
     """
     <style>
+    /* Hide Streamlit default elements */
     [data-testid="stHeader"] {display: none;}
     footer {display: none;}
     #MainMenu {display: none;}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
-st.markdown(
-    """
-    <style>
-
+    /* Background styling */
     [data-testid="stAppViewContainer"] {
         background-image: url("https://images.unsplash.com/photo-1707902665498-a202981fb5ac?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
         background-size: cover;
@@ -27,6 +21,7 @@ st.markdown(
         background-position: center;
     }
 
+    /* Main container */
     .block-container {
         background: rgba(0, 0, 0, 0.60);
         border-radius: 18px;
@@ -36,6 +31,7 @@ st.markdown(
         padding: 48px 36px 32px 36px;
     }
 
+    /* Result display box */
     .result-box {
         background: rgba(0, 230, 77, 0.70);
         color: #fff;
@@ -47,16 +43,15 @@ st.markdown(
         margin-top: 1.5rem;
     }
     
-    label, .stSelectbox label, .stSlider label, .stRadio label {
+    /* Labels for form elements */
+    label, .stSelectbox label, .stSlider label {
         font-weight: bold !important;
         color: #fff !important;
     }
 
-    .stTextInput > div > input,
+    /* Form element styling - only for used components */
     .stSelectbox > div > div,
     .stSlider > div > div,
-    .stRadio > div > div,
-    .stNumberInput > div > input,
     .stButton > button {
         background: rgba(0, 0, 0, 0.20) !important;
         color: #fff !important;
@@ -64,16 +59,12 @@ st.markdown(
         border: none !important;
     }
 
+    /* Button container centering */
     .stButton {
         display: flex;
         justify-content: center;
         margin-top: 1.5em;
     }
-
-    ::placeholder {
-        color: #ddd !important;
-    }
-    
     </style>
     """,
     unsafe_allow_html=True
@@ -140,5 +131,3 @@ if st.button("🔍 Predict Salary"):
         """,
         unsafe_allow_html=True
     )
-
-

@@ -68,8 +68,9 @@ try:
     result = predict_salary(age, gender, education, job, experience, model_type)
     
     if result:
-        print(f"Predicted Salary: {result:.2f}")
+        print(f"Predicted Salary (Monthly): {result:.2f}")
         
 except ValueError:
     print("Please enter valid inputs!")
+
     

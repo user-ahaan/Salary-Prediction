@@ -135,9 +135,10 @@ if st.button("🔍 Predict Salary"):
     st.markdown(
         f"""
         <div class="result-box">
-            💰 Predicted Salary: ₹ {pred:,.2f}
+            💰 Predicted Salary (Monthly): ₹ {pred:,.2f}
         </div>
         """,
         unsafe_allow_html=True
     )
+
 
